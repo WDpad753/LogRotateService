@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36429.23 d17.14
+VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogRotateService", "LogRotateService.csproj", "{C1399B2E-F6EC-4383-A5AA-2D92E2CAFEF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogRotateUnitTests", "..\LogRotateUnitTests\LogRotateUnitTests.csproj", "{76DCE467-9028-4910-AFA4-07ADF631817B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseClass", "..\BaseClassLibrary\BaseClass\BaseClass.csproj", "{B876E39E-2F48-369D-7611-7936FD448E37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseLogger", "..\BaseClassLibrary\BaseLogger\BaseLogger.csproj", "{93CAC875-1095-7118-AFCC-936E1FAB76DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{76DCE467-9028-4910-AFA4-07ADF631817B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76DCE467-9028-4910-AFA4-07ADF631817B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76DCE467-9028-4910-AFA4-07ADF631817B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B876E39E-2F48-369D-7611-7936FD448E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B876E39E-2F48-369D-7611-7936FD448E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B876E39E-2F48-369D-7611-7936FD448E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B876E39E-2F48-369D-7611-7936FD448E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93CAC875-1095-7118-AFCC-936E1FAB76DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93CAC875-1095-7118-AFCC-936E1FAB76DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93CAC875-1095-7118-AFCC-936E1FAB76DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93CAC875-1095-7118-AFCC-936E1FAB76DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
