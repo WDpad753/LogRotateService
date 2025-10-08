@@ -15,4 +15,10 @@
     <ProjectReference Include="..\BaseClassLibrary\BaseClass\BaseClass.csproj" />
     <ProjectReference Include="..\BaseClassLibrary\BaseLogger\BaseLogger.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Base\" />
+    <Folder Include="Helper\" />
+    <Folder Include="ServiceFunctions\" />
+  </ItemGroup>
 </Project>

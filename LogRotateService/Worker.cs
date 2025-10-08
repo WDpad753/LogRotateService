@@ -1,23 +1,38 @@
+using BaseClass.Base.Interface;
+using BaseClass.ConsoleAppBase;
+using BaseClass.Service;
+using BaseClass.Service.BaseWorker;
+using BaseLogger;
+using Microsoft.Extensions.Hosting;
+using ILogger = BaseLogger.ILogger;
+
 namespace LogRotateService
 {
-    public class Worker : BackgroundService
+    public class Worker : ServiceWorkerBase
     {
-        private readonly ILogger<Worker> _logger;
+        private readonly ServiceBase _serviceBase;
+        private readonly IHostApplicationLifetime _lifeTime;
+        private readonly ILogger _logger;
 
-        public Worker(ILogger<Worker> logger)
+        public Worker(IHostApplicationLifetime lifetime, IBaseProvider provider, ServiceBase service) : base(lifetime, service)
         {
-            _logger = logger;
+            _serviceBase = service;
+            _lifeTime = lifetime;
+
+            _logger = provider.GetItem<ILogger>();
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        protected override async Task ExecuteTaskAsync(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            if (_serviceBase.CanStart())
             {
-                if (_logger.IsEnabled(LogLevel.Information))
-                {
-                    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                }
-                await Task.Delay(1000, stoppingToken);
+                await _serviceBase.Start(stoppingToken);
+            }
+            else
+            {
+                _logger.LogError("Service cannot start. Stopping host...");
+                _lifeTime.StopApplication();
+                await StopAsync(_lifeTime.ApplicationStopping);
             }
         }
     }
