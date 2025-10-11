@@ -30,7 +30,7 @@ namespace LogRotateService
             }
             else
             {
-                _logger.LogError("Service cannot start. Stopping host...");
+                _logger.Error("Service cannot start. Stopping host...");
                 _lifeTime.StopApplication();
                 await StopAsync(_lifeTime.ApplicationStopping);
             }
